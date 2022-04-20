@@ -8,11 +8,32 @@ public class SpaceShip {
     private int coordenadaY = 0;
     private int direccionX = 0;
     private int direccionY = 0;
+    private int ejeSeleccionado;
 
-    public SpaceShip(String nombre, String matriculaGalatica, int aceleracion) {
+    public SpaceShip(String nombre, String matriculaGalatica, int aceleracion, int ejeSeleccionado) {
         this.nombre = nombre;
         this.matriculaGalatica = matriculaGalatica;
         this.aceleracion = aceleracion;
+        this.ejeSeleccionado = ejeSeleccionado;
+    }
+
+    // Método speedUp()
+    public void speedUp() {
+        if (getEjeSeleccionado() == 0) {
+            velocidadX += aceleracion;
+            coordenadaX += velocidadX;
+            System.out.println("Acelerando en el eje X");
+            System.out.println("Velocidad X actual: " + velocidadX + " km/h");
+            System.out.println("Coordenadas actuales: X: " + coordenadaX + " , Y: " + coordenadaY);
+        } else if (getEjeSeleccionado() == 1) {
+            velocidadY += aceleracion;
+            coordenadaY += aceleracion;
+            System.out.println("Acelerando en el eje Y");
+            System.out.println("Velocidad Y actual: " + velocidadY + " km/h");
+            System.out.println("Coordenadas actuales: X: " + coordenadaX + " , Y: " + coordenadaY);
+        } else {
+            System.out.println("ERROR: debes introducir X o Y");
+        }
     }
 
     public String getNombre() {
@@ -87,4 +108,11 @@ public class SpaceShip {
         this.direccionY = direccionY;
     }
 
+    public int getEjeSeleccionado() {
+        return ejeSeleccionado;
+    }
+
+    public void setEjeSeleccionado(int ejeSeleccionado) {
+        this.ejeSeleccionado = ejeSeleccionado;
+    }
 }
