@@ -18,9 +18,6 @@ public class SpaceShip {
         this.ejeSeleccionado = ejeSeleccionado;
     }
 
-    public SpaceShip() {
-    }
-
     // Método speedUp()
     public void speedUp() {
         if (getEjeSeleccionado() == 0) {
@@ -197,7 +194,11 @@ public class SpaceShip {
                 "   |=|   ( ) ( )   |=|\n" +
                 "  /===\\           /===\\\n" +
                 " |||||||         |||||||\n" +
-                " -------         -------";
+                " -------         -------\n" +
+                "Nombre: " + nombre + "\n" +
+                "Matrícula galáctica: " + matriculaGalatica + "\n" +
+                "Aceleración: " + aceleracion + "\n" +
+                "Coordenadas actuales: X: " + coordenadaX + " Y: " + coordenadaY;
     }
 
 }
