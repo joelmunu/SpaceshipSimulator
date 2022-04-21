@@ -25,6 +25,10 @@ se moverá.
 > El método brake pemrite al usuario frenar o ir marcha atrás con la nave, utilizando la misma aceleración que hacia delante.
 > La fórmula utilizada es la misma que la del método speedUp pero al revés.
 
+## Método emergencyStop()
+> Este método frenará la nave completamente, haciendo que su velocidad pase a ser cero inmediatamente, además mostrará que la velocidad es 0
+> y las coordenadas actuales.
+
 ## Método toString()
 > El método toString se ha sobrecargado para que muestre una representación gráfica de la nave mediante un AsciiArt
 > El AsciiArt original fue seleccionado de la página del AscciArt Archive, y fue creado por un artista anónimo y modificado por mí.

@@ -79,6 +79,17 @@ public class SpaceShip {
         }
     }
 
+    // Método emergencyStop
+    public void emergencyStop() {
+        System.out.println("ALERTA: La nave se frenará en seco inmediatamente");
+        velocidadX = 0;
+        velocidadY = 0;
+        System.out.println("La nave se ha frenado de manera satisfactoria");
+        System.out.println("Velocidad X: " + velocidadX + "km/h");
+        System.out.println("Velocidad Y: " + velocidadY + "km/h");
+        System.out.println("Coordenadas actuales: X: " + coordenadaX + " , Y: " + coordenadaY);
+    }
+
     // Métodos de acceso
     public String getNombre() {
         return nombre;
