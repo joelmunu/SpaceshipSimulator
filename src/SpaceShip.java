@@ -10,6 +10,7 @@ public class SpaceShip {
     private int direccionY = 0;
     private int ejeSeleccionado;
 
+    // Constructor (nombre, matriculaGalactica, aceleracion y ejeSeleccionado)
     public SpaceShip(String nombre, String matriculaGalatica, int aceleracion, int ejeSeleccionado) {
         this.nombre = nombre;
         this.matriculaGalatica = matriculaGalatica;
@@ -22,20 +23,63 @@ public class SpaceShip {
         if (getEjeSeleccionado() == 0) {
             velocidadX += aceleracion;
             coordenadaX += velocidadX;
+
             System.out.println("Acelerando en el eje X");
             System.out.println("Velocidad X actual: " + velocidadX + " km/h");
             System.out.println("Coordenadas actuales: X: " + coordenadaX + " , Y: " + coordenadaY);
+
         } else if (getEjeSeleccionado() == 1) {
             velocidadY += aceleracion;
-            coordenadaY += aceleracion;
+            coordenadaY += velocidadY;
+
             System.out.println("Acelerando en el eje Y");
             System.out.println("Velocidad Y actual: " + velocidadY + " km/h");
             System.out.println("Coordenadas actuales: X: " + coordenadaX + " , Y: " + coordenadaY);
+
+        } else if (getEjeSeleccionado() == 2){
+            velocidadX += aceleracion;
+            velocidadY += aceleracion;
+            coordenadaX += velocidadX;
+            coordenadaY += velocidadY;
+
+            System.out.println("Acelerando en los ejes X e Y");
+            System.out.println("Velocidad X actual: " + velocidadX + " km/h");
+            System.out.println("Velocidad Y actual: " + velocidadY + " km/h");
+            System.out.println("Coordenadas actuales: X: " + coordenadaX + " , Y: " + coordenadaY);
+
         } else {
-            System.out.println("ERROR: debes introducir X o Y");
+            System.out.println("ERROR: debes introducir X (0), Y (1) o ambos (2)");
         }
     }
 
+    // Método brake
+    public void brake() {
+        if (getEjeSeleccionado() == 0) {
+            velocidadX -= aceleracion;
+
+            System.out.println("Se está frenando la nave en el eje X");
+            System.out.println("Velocidad X actual: " + velocidadX + " km/h");
+
+        } else if (getEjeSeleccionado() == 1) {
+            velocidadY -= aceleracion;
+
+            System.out.println("Se está frenando la nave en el eje Y");
+            System.out.println("Velocidad Y actual: " + velocidadY + " km/h");
+
+        } else if (getEjeSeleccionado() == 2) {
+            velocidadX -= aceleracion;
+            velocidadY -= aceleracion;
+            System.out.println("Se está frenando la nave en ambos ejes");
+
+            System.out.println("Velocidad X actual: " + velocidadX + " km/h");
+            System.out.println("Velocidad Y actual: " + velocidadY + " km/h");
+
+        } else {
+            System.out.println("ERROR: debes introducir X (0), Y (1) o ambos (2)");
+        }
+    }
+
+    // Métodos de acceso
     public String getNombre() {
         return nombre;
     }
@@ -116,6 +160,7 @@ public class SpaceShip {
         this.ejeSeleccionado = ejeSeleccionado;
     }
 
+    // Método toString sobrecargado
     @Override
     public String toString() {
         return "       (=========)\n" +
