@@ -18,6 +18,9 @@ public class SpaceShip {
         this.ejeSeleccionado = ejeSeleccionado;
     }
 
+    public SpaceShip() {
+    }
+
     // Método speedUp()
     public void speedUp() {
         if (getEjeSeleccionado() == 0) {
